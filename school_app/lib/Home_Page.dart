@@ -8,7 +8,50 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Map<String, dynamic>> mektebler = [
+  List<Map<String, dynamic>> mektebler = SchoolInfo.mektebler;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      drawer: Drawer(
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('MEKTEBLER'),
+          ),
+        ),
+      ),
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
+          ),
+        ],
+        title: const Text('MEKTEBLER'),
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: mektebler.length,
+              itemBuilder: (context, index) => Card(
+                child: ListTile(
+                  onTap: () {},
+                  title: Text(
+                    mektebler[index].keys.first.toString(),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SchoolInfo {
+  static const List<Map<String, dynamic>> mektebler = [
     {
       '34 sayli mekteb': {
         'direktor': 'ismayil',
@@ -100,41 +143,4 @@ class _MyHomePageState extends State<MyHomePage> {
       },
     },
   ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Drawer(
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('MEKTEBLER'),
-          ),
-        ),
-      ),
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search),
-          ),
-        ],
-        title: const Text('MEKTEBLER'),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: mektebler.length,
-              itemBuilder: (context, index) => Card(
-                child: ListTile(
-                  onTap: () {},
-                  title: Text(mektebler[index].keys.first.toString()),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
