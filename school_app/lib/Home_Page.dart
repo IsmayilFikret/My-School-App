@@ -105,11 +105,18 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('MEKTEBLER'),
+          ),
+        ),
+      ),
       appBar: AppBar(
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
         ],
         title: const Text('MEKTEBLER'),
