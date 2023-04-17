@@ -8,7 +8,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final TextEditingController controller = TextEditingController();
   List<Map<String, dynamic>> mektebler = [
     {
       '34 sayli mekteb': {
