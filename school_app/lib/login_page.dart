@@ -44,13 +44,37 @@ class _Body extends StatelessWidget {
               height: 20,
             ),
             //email textfield
-
+            CustomTextField(),
             //password textfield
 
             //sign in button
 
             //not a member? register now
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomTextField extends StatelessWidget {
+  const CustomTextField({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            border: Border.all(color: Colors.white),
+            borderRadius: BorderRadius.circular(12)),
+        child: const Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: TextField(
+            decoration:
+                InputDecoration(border: InputBorder.none, hintText: 'Email'),
+          ),
         ),
       ),
     );
