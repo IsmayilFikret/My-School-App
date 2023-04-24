@@ -5,19 +5,31 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: const Color.fromARGB(255, 218, 213, 213),
       body: _Body(),
     );
   }
 }
 
-class _Body extends StatelessWidget {
-  _Body();
+class _Body extends StatefulWidget {
+  const _Body();
+
+  @override
+  State<_Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<_Body> {
   final TextEditingController emailController = TextEditingController();
+
   final TextEditingController passwordController = TextEditingController();
+
   final TextEditingController repasswordController = TextEditingController();
+
   final TextEditingController usernameController = TextEditingController();
+
+  bool obscureText = true;
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -59,7 +71,16 @@ class _Body extends StatelessWidget {
               height: 15,
             ),
             CustomTextField(
-              obscureText: true,
+              icon:
+                  obscureText == true ? Icons.visibility_off : Icons.visibility,
+              onPress: () {
+                setState(
+                  () {
+                    obscureText = !obscureText;
+                  },
+                );
+              },
+              //obscureText: true,
               controller: passwordController,
               hintText: 'Password',
             ),
@@ -115,13 +136,16 @@ class CustomTextField extends StatelessWidget {
     this.autoFocus = false,
     required this.controller,
     this.obscureText = false,
+    this.icon,
+    this.onPress,
   });
 
   final String hintText;
   final bool? autoFocus;
   final TextEditingController controller;
   final bool obscureText;
-
+  final IconData? icon;
+  final VoidCallback? onPress;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -138,8 +162,14 @@ class CustomTextField extends StatelessWidget {
             obscureText: obscureText,
             autofocus: autoFocus ?? false,
             controller: controller,
-            decoration:
-                InputDecoration(border: InputBorder.none, hintText: hintText),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: hintText,
+              suffixIcon: IconButton(
+                icon: Icon(icon),
+                onPressed: onPress,
+              ),
+            ),
           ),
         ),
       ),
