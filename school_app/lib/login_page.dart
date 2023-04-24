@@ -39,7 +39,7 @@ class _Body extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
             ),
             const SizedBox(
-              height: 20,
+              height: 40,
             ),
             //email textfield
             CustomTextField(
@@ -48,14 +48,28 @@ class _Body extends StatelessWidget {
               autoFocus: true,
             ),
             const SizedBox(
-              height: 20,
+              height: 15,
             ),
             CustomTextField(
-              controller: emailController,
+              obscureText: true,
+              controller: passwordController,
               hintText: 'Password',
             ),
-
+            SizedBox(height: 20),
             //sign in button
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Container(
+                padding: EdgeInsets.all(25),
+                decoration: BoxDecoration(color: Colors.deepPurple),
+                child: Center(
+                  child: Text(
+                    'Sign In',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            )
 
             //not a member? register now
           ],
@@ -71,11 +85,13 @@ class CustomTextField extends StatelessWidget {
     required this.hintText,
     this.autoFocus = false,
     required this.controller,
+    this.obscureText = false,
   });
 
   final String hintText;
-  final bool autoFocus;
+  final bool? autoFocus;
   final TextEditingController controller;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +105,8 @@ class CustomTextField extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 20),
           child: TextField(
-            autofocus: autoFocus,
+            obscureText: obscureText,
+            autofocus: autoFocus ?? false,
             controller: controller,
             decoration:
                 InputDecoration(border: InputBorder.none, hintText: hintText),
