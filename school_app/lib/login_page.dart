@@ -1,123 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:kartal/kartal.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
-  final TextEditingController repasswordController = TextEditingController();
-  final TextEditingController usernameController = TextEditingController();
-
-  bool obscureText = true;
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Drawer(
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('MEKTEBLER'),
-          ),
-        ),
-      ),
-      appBar: AppBar(
-        title: Text('MEKTEBLER'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Form(
-          child: Column(
-            children: [
-              CustomTextField(
-                validator: null,
-                controller: usernameController,
-                hintText: 'username',
-              ),
-              CustomTextField(
-                inputType: TextInputType.emailAddress,
-                validator: (value) => (value?.isValidEmail ?? false)
-                    ? null
-                    : 'Please write email',
-                hintText: "email adrees",
-                controller: emailController,
-              ),
-              CustomTextField(
-                icon: obscureText ? Icons.visibility_off : Icons.visibility,
-                onPress: () {
-                  setState(() {
-                    obscureText = !obscureText;
-                  });
-                },
-                obscureText: obscureText,
-                inputType: TextInputType.number,
-                validator: (value) => (value?.isValidPassword ?? false)
-                    ? null
-                    : 'Please write password',
-                controller: passwordController,
-                hintText: 'password',
-              ),
-              CustomTextField(
-                obscureText: true,
-                inputType: TextInputType.number,
-                validator: null,
-                textInputAction: TextInputAction.done,
-                hintText: 'repeat password',
-                controller: repasswordController,
-              )
-            ],
-          ),
-        ),
-      ),
+    return const Scaffold(
+      backgroundColor: Color.fromARGB(255, 218, 213, 213),
+      body: _Body(),
     );
   }
 }
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
+class _Body extends StatelessWidget {
+  const _Body({
     super.key,
-    required this.hintText,
-    this.autoFocus = false,
-    required this.controller,
-    this.textInputAction = TextInputAction.next,
-    this.validator,
-    this.inputType = TextInputType.multiline,
-    this.obscureText,
-    this.onPress,
-    this.icon,
   });
 
-  final String hintText;
-  final bool? autoFocus;
-  final bool? obscureText;
-
-  final TextEditingController controller;
-  final TextInputAction? textInputAction;
-  final TextInputType? inputType;
-  final String? Function(String?)? validator;
-  final IconData? icon;
-  final VoidCallback? onPress;
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      obscureText: obscureText ?? false,
-      keyboardType: inputType,
-      validator: validator,
-      controller: controller,
-      decoration: InputDecoration(
-        suffixIcon: IconButton(
-          onPressed: onPress,
-          icon: Icon(icon),
+    return SafeArea(
+      child: Center(
+        child: Column(
+          children: const [
+            SizedBox(
+              height: 20,
+            ),
+            //hello again
+            Text(
+              'Hello Again!',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'Welcome back , you\'we been missed!',
+              style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            //email textfield
+
+            //password textfield
+
+            //sign in button
+
+            //not a member? register now
+          ],
         ),
-        hintText: hintText,
       ),
-      textInputAction: textInputAction,
-      autofocus: autoFocus ?? false,
-      onChanged: (value) {},
     );
   }
 }
