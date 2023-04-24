@@ -20,11 +20,14 @@ class _Body extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Center(
+    return SingleChildScrollView(
+      child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 100,
+            ),
             const Icon(
               Icons.school,
               size: 100,
