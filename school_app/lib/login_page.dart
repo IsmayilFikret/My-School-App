@@ -23,23 +23,28 @@ class _Body extends StatelessWidget {
     return SafeArea(
       child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(
-              height: 20,
-            ), //hello again
-            const Text(
-              'Hello Again!',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            const Icon(
+              Icons.school,
+              size: 100,
             ),
             const SizedBox(
-              height: 20,
+              height: 75,
+            ),
+            const Text(
+              'Hello Again!',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
+            ),
+            const SizedBox(
+              height: 10,
             ),
             const Text(
               'Welcome back , you\'we been missed!',
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
             ),
             const SizedBox(
-              height: 40,
+              height: 50,
             ),
             //email textfield
             CustomTextField(
@@ -55,23 +60,44 @@ class _Body extends StatelessWidget {
               controller: passwordController,
               hintText: 'Password',
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             //sign in button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Container(
-                padding: EdgeInsets.all(25),
-                decoration: BoxDecoration(color: Colors.deepPurple),
-                child: Center(
+                padding: const EdgeInsets.all(15),
+                decoration: const BoxDecoration(
+                    color: Colors.deepPurple,
+                    borderRadius: BorderRadius.all(Radius.circular(12))),
+                child: const Center(
                   child: Text(
                     'Sign In',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
-            )
-
+            ),
+            const SizedBox(
+              height: 25,
+            ),
             //not a member? register now
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text(
+                  'Not a member ? ',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                Text(
+                  '   Register now',
+                  style: TextStyle(
+                      color: Colors.blue, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
           ],
         ),
       ),
@@ -99,9 +125,10 @@ class CustomTextField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.grey.shade200,
-            border: Border.all(color: Colors.white),
-            borderRadius: BorderRadius.circular(12)),
+          color: Colors.grey.shade200,
+          border: Border.all(color: Colors.white),
+          borderRadius: BorderRadius.circular(12),
+        ),
         child: Padding(
           padding: const EdgeInsets.only(left: 20),
           child: TextField(
