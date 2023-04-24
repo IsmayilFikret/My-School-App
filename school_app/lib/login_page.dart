@@ -1,51 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 218, 213, 213),
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 218, 213, 213),
       body: _Body(),
     );
   }
 }
 
 class _Body extends StatelessWidget {
-  const _Body({
-    super.key,
-  });
-
+  _Body();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController repasswordController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Center(
         child: Column(
-          children: const [
-            SizedBox(
+          children: [
+            const SizedBox(
               height: 20,
             ),
             //hello again
-            Text(
+            const Text(
               'Hello Again!',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               'Welcome back , you\'we been missed!',
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
             ),
-            SizedBox(
-              height: 20,
+            const SizedBox(
+              height: 40,
             ),
             //email textfield
-            CustomTextField(),
-            //password textfield
+            CustomTextField(
+              controller: emailController,
+              hintText: 'Email',
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            CustomTextField(
+              controller: emailController,
+              hintText: 'Email',
+            ),
 
             //sign in button
 
@@ -58,7 +66,16 @@ class _Body extends StatelessWidget {
 }
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key});
+  const CustomTextField({
+    super.key,
+    required this.hintText,
+    this.autoFocus = false,
+    required this.controller,
+  });
+
+  final String hintText;
+  final bool autoFocus;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -69,11 +86,11 @@ class CustomTextField extends StatelessWidget {
             color: Colors.grey.shade200,
             border: Border.all(color: Colors.white),
             borderRadius: BorderRadius.circular(12)),
-        child: const Padding(
-          padding: EdgeInsets.only(left: 20),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20),
           child: TextField(
             decoration:
-                InputDecoration(border: InputBorder.none, hintText: 'Email'),
+                InputDecoration(border: InputBorder.none, hintText: hintText),
           ),
         ),
       ),
