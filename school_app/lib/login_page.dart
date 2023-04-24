@@ -63,6 +63,7 @@ class _BodyState extends State<_Body> {
             ),
             //email textfield
             CustomTextField(
+              inputype: TextInputType.emailAddress,
               controller: emailController,
               hintText: 'Email',
               autoFocus: true,
@@ -138,6 +139,7 @@ class CustomTextField extends StatelessWidget {
     this.obscureText = false,
     this.icon,
     this.onPress,
+    this.inputype = TextInputType.multiline,
   });
 
   final String hintText;
@@ -146,6 +148,7 @@ class CustomTextField extends StatelessWidget {
   final bool obscureText;
   final IconData? icon;
   final VoidCallback? onPress;
+  final TextInputType? inputype;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -159,6 +162,7 @@ class CustomTextField extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 20),
           child: TextField(
+            keyboardType: inputype,
             obscureText: obscureText,
             autofocus: autoFocus ?? false,
             controller: controller,
