@@ -33,14 +33,14 @@ class _Body extends StatelessWidget {
               height: 75,
             ),
             const Text(
-              'Hello Again!',
+              'Xoş gəldiniz!',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
             ),
             const SizedBox(
               height: 10,
             ),
             const Text(
-              'Welcome back , you\'we been missed!',
+              'Zəhmət olmasa giriş edin !',
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
             ),
             const SizedBox(
