@@ -26,8 +26,7 @@ class _Body extends StatelessWidget {
           children: [
             const SizedBox(
               height: 20,
-            ),
-            //hello again
+            ), //hello again
             const Text(
               'Hello Again!',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
@@ -40,19 +39,20 @@ class _Body extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
             ),
             const SizedBox(
-              height: 40,
+              height: 20,
             ),
             //email textfield
             CustomTextField(
               controller: emailController,
               hintText: 'Email',
+              autoFocus: true,
             ),
             const SizedBox(
               height: 20,
             ),
             CustomTextField(
               controller: emailController,
-              hintText: 'Email',
+              hintText: 'Password',
             ),
 
             //sign in button
@@ -89,6 +89,8 @@ class CustomTextField extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 20),
           child: TextField(
+            autofocus: autoFocus,
+            controller: controller,
             decoration:
                 InputDecoration(border: InputBorder.none, hintText: hintText),
           ),
