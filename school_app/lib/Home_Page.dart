@@ -15,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color.fromARGB(255, 240, 158, 7),
         actions: [
           IconButton(
             onPressed: () {},
