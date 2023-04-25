@@ -98,7 +98,7 @@ class _BodyState extends State<_Body> {
             const SizedBoxWidget(value: 15),
             //repassword textfield
             CustomTextField(
-              hintText: 'Repassword',
+              hintText: 'Repeat password',
               controller: repasswordController,
               obscureText: true,
               icon:

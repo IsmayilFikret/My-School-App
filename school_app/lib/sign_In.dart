@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_app/Home_Page.dart';
 import 'package:school_app/register.dart';
 import 'package:school_app/text_field.dart';
 
@@ -41,6 +42,8 @@ class _BodyState extends State<_Body> {
   final TextEditingController usernameController = TextEditingController();
 
   bool obscureText = true;
+  String username = 'admin';
+  String password = 'admin';
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +108,14 @@ class _BodyState extends State<_Body> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MyHomePage(),
+                    ),
+                  );
+                },
                 child: Container(
                   padding: const EdgeInsets.all(15),
                   decoration: const BoxDecoration(
