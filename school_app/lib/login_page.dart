@@ -66,7 +66,7 @@ class _BodyState extends State<_Body> {
               inputype: TextInputType.emailAddress,
               controller: emailController,
               hintText: 'Email',
-              autoFocus: true,
+              autoFocus: false,
             ),
             const SizedBox(
               height: 15,

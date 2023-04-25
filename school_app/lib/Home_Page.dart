@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_app/login_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -15,24 +16,35 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 240, 158, 7),
+        backgroundColor: Colors.deepPurple,
         actions: [
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.search),
           ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LoginPage(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.login),
+          ),
         ],
         title: const Text('MEKTEBLER'),
       ),
       body: Container(
-        color: const Color.fromARGB(255, 249, 249, 251),
+        color: Colors.white10,
         child: Column(
           children: [
             Expanded(
               child: ListView.builder(
                 itemCount: mektebler.length,
                 itemBuilder: (context, index) => Card(
-                  color: const Color.fromARGB(255, 245, 190, 126),
+                  color: Colors.deepPurple.shade100,
                   child: ListTile(
                     onTap: () {},
                     title: Text(
