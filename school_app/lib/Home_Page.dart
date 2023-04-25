@@ -15,7 +15,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 240, 158, 7),
+        backgroundColor: const Color.fromARGB(255, 240, 158, 7),
         actions: [
           IconButton(
             onPressed: () {},
@@ -25,14 +25,14 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('MEKTEBLER'),
       ),
       body: Container(
-        color: Color.fromARGB(255, 249, 249, 251),
+        color: const Color.fromARGB(255, 249, 249, 251),
         child: Column(
           children: [
             Expanded(
               child: ListView.builder(
                 itemCount: mektebler.length,
                 itemBuilder: (context, index) => Card(
-                  color: Color.fromARGB(255, 245, 190, 126),
+                  color: const Color.fromARGB(255, 245, 190, 126),
                   child: ListTile(
                     onTap: () {},
                     title: Text(
