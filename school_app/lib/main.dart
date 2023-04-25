@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:school_app/login_page.dart';
 
 import 'Home_Page.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:school_app/login_page.dart';
+import 'package:school_app/signIn.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const LoginPage(),
+                  builder: (context) => const SignInPage(),
                 ),
               );
             },
@@ -37,14 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('MEKTEBLER'),
       ),
       body: Container(
-        color: Colors.white10,
+        color: Color.fromARGB(255, 218, 213, 213),
         child: Column(
           children: [
             Expanded(
               child: ListView.builder(
                 itemCount: mektebler.length,
                 itemBuilder: (context, index) => Card(
-                  color: Colors.deepPurple.shade100,
+                  color: Colors.white,
                   child: ListTile(
                     onTap: () {},
                     title: Text(
