@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:school_app/text_field.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -62,13 +62,23 @@ class _BodyState extends State<_Body> {
               height: 10,
             ),
             const Text(
-              'Zəhmət olmasa giriş edin !',
+              'Giriş etmək üçün xanaları doldurun!',
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
             ),
             const SizedBox(
               height: 50,
             ),
+            //username textfield
+            CustomTextField(
+              hintText: 'Username',
+              controller: usernameController,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+
             //email textfield
+
             CustomTextField(
               inputype: TextInputType.emailAddress,
               controller: emailController,
@@ -92,6 +102,24 @@ class _BodyState extends State<_Body> {
               //obscureText: true,
               controller: passwordController,
               hintText: 'Password',
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            //repassword textfield
+            CustomTextField(
+              hintText: 'Repassword',
+              controller: repasswordController,
+              obscureText: true,
+              icon:
+                  obscureText == true ? Icons.visibility_off : Icons.visibility,
+              onPress: () {
+                setState(
+                  () {
+                    obscureText = !obscureText;
+                  },
+                );
+              },
             ),
             const SizedBox(height: 20),
             //sign in button

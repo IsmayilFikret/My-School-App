@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:school_app/register.dart';
 import 'package:school_app/text_field.dart';
 
-class SignIn extends StatelessWidget {
-  const SignIn({super.key});
+class SignInPage extends StatelessWidget {
+  const SignInPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -131,7 +132,13 @@ class _BodyState extends State<_Body> {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => RegisterPage(),
+                      ),
+                    );
+                  },
                   child: const Text(
                     '   Register now',
                     style: TextStyle(
