@@ -45,29 +45,29 @@ class _BodyState extends State<_Body> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(
-              height: 100,
+            SizedBoxWidget(
+              value: 50,
             ),
             const Icon(
               Icons.school,
               size: 100,
             ),
-            const SizedBox(
-              height: 75,
+            SizedBoxWidget(
+              value: 75,
             ),
             const Text(
               'Xoş gəldiniz!',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
             ),
-            const SizedBox(
-              height: 10,
+            SizedBoxWidget(
+              value: 10,
             ),
             const Text(
               'Zəhmət olmasa giriş edin !',
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
             ),
-            const SizedBox(
-              height: 50,
+            SizedBoxWidget(
+              value: 50,
             ),
             //email textfield
             CustomTextField(
@@ -76,8 +76,8 @@ class _BodyState extends State<_Body> {
               hintText: 'Email',
               autoFocus: false,
             ),
-            const SizedBox(
-              height: 15,
+            SizedBoxWidget(
+              value: 15,
             ),
             CustomTextField(
               obscureText: true,
@@ -94,7 +94,9 @@ class _BodyState extends State<_Body> {
               controller: passwordController,
               hintText: 'Password',
             ),
-            const SizedBox(height: 20),
+            SizedBoxWidget(
+              value: 20,
+            ),
             //sign in button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -120,8 +122,8 @@ class _BodyState extends State<_Body> {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 25,
+            SizedBoxWidget(
+              value: 25,
             ),
             //not a member? register now
             Row(
