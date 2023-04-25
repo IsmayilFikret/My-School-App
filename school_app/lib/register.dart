@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:school_app/Home_Page.dart';
+import 'package:school_app/signIn.dart';
 import 'package:school_app/text_field.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -127,7 +129,7 @@ class _BodyState extends State<_Body> {
                   ),
                   child: const Center(
                     child: Text(
-                      'Sign In',
+                      'Sign Up',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,
@@ -139,23 +141,6 @@ class _BodyState extends State<_Body> {
             ),
             SizedBoxWidget(value: 25),
             //not a member? register now
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Not a member ? ',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: const Text(
-                    '   Register now',
-                    style: TextStyle(
-                        color: Colors.blue, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ],
-            ),
           ],
         ),
       ),
@@ -168,7 +153,7 @@ class SizedBoxWidget extends StatelessWidget {
     super.key,
     required this.value,
   });
-  final double value;
+  final double? value;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
