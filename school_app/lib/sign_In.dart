@@ -1,11 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:school_app/register.dart';
 import 'package:school_app/text_field.dart';
 
-class SignInPage extends StatelessWidget {
+class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
 
+  @override
+  State<SignInPage> createState() => _SignInPageState();
+}
+
+class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +18,7 @@ class SignInPage extends StatelessWidget {
         backgroundColor: Colors.deepPurple,
         title: const Text('MEKTEBLER'),
       ),
-      backgroundColor: Color.fromARGB(255, 218, 213, 213),
+      backgroundColor: const Color.fromARGB(255, 218, 213, 213),
       body: const _Body(),
     );
   }
@@ -45,28 +49,28 @@ class _BodyState extends State<_Body> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBoxWidget(
+            const SizedBoxWidget(
               value: 50,
             ),
             const Icon(
               Icons.school,
               size: 100,
             ),
-            SizedBoxWidget(
+            const SizedBoxWidget(
               value: 75,
             ),
             const Text(
               'Xoş gəldiniz!',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
             ),
-            SizedBoxWidget(
+            const SizedBoxWidget(
               value: 10,
             ),
             const Text(
               'Zəhmət olmasa giriş edin !',
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
             ),
-            SizedBoxWidget(
+            const SizedBoxWidget(
               value: 50,
             ),
             //email textfield
@@ -76,7 +80,7 @@ class _BodyState extends State<_Body> {
               hintText: 'Email',
               autoFocus: true,
             ),
-            SizedBoxWidget(
+            const SizedBoxWidget(
               value: 15,
             ),
             CustomTextField(
@@ -94,7 +98,7 @@ class _BodyState extends State<_Body> {
               controller: passwordController,
               hintText: 'Password',
             ),
-            SizedBoxWidget(
+            const SizedBoxWidget(
               value: 20,
             ),
             //sign in button
@@ -122,7 +126,7 @@ class _BodyState extends State<_Body> {
                 ),
               ),
             ),
-            SizedBoxWidget(
+            const SizedBoxWidget(
               value: 25,
             ),
             //not a member? register now
@@ -137,7 +141,7 @@ class _BodyState extends State<_Body> {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => RegisterPage(),
+                        builder: (context) => const RegisterPage(),
                       ),
                     );
                   },

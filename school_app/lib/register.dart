@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:school_app/Home_Page.dart';
-import 'package:school_app/signIn.dart';
+
 import 'package:school_app/text_field.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -15,7 +13,7 @@ class RegisterPage extends StatelessWidget {
         backgroundColor: Colors.deepPurple,
         title: const Text('MEKTEBLER'),
       ),
-      backgroundColor: Color.fromARGB(255, 218, 213, 213),
+      backgroundColor: const Color.fromARGB(255, 218, 213, 213),
       body: const _Body(),
     );
   }
@@ -46,7 +44,7 @@ class _BodyState extends State<_Body> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBoxWidget(
+            const SizedBoxWidget(
               value: 50,
             ),
 
@@ -54,24 +52,24 @@ class _BodyState extends State<_Body> {
               Icons.school,
               size: 100,
             ),
-            SizedBoxWidget(value: 75),
+            const SizedBoxWidget(value: 75),
             const Text(
               'Xoş gəldiniz!',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
             ),
-            SizedBoxWidget(value: 10),
+            const SizedBoxWidget(value: 10),
             const Text(
               'Giriş etmək üçün xanaları doldurun!',
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
             ),
-            SizedBoxWidget(value: 50),
+            const SizedBoxWidget(value: 50),
             //username textfield
             CustomTextField(
               autoFocus: true,
               hintText: 'Username',
               controller: usernameController,
             ),
-            SizedBoxWidget(value: 15),
+            const SizedBoxWidget(value: 15),
 
             //email textfield
 
@@ -81,7 +79,7 @@ class _BodyState extends State<_Body> {
               hintText: 'Email',
               autoFocus: false,
             ),
-            SizedBoxWidget(value: 15),
+            const SizedBoxWidget(value: 15),
             CustomTextField(
               obscureText: true,
               icon:
@@ -97,7 +95,7 @@ class _BodyState extends State<_Body> {
               controller: passwordController,
               hintText: 'Password',
             ),
-            SizedBoxWidget(value: 15),
+            const SizedBoxWidget(value: 15),
             //repassword textfield
             CustomTextField(
               hintText: 'Repassword',
@@ -113,7 +111,7 @@ class _BodyState extends State<_Body> {
                 );
               },
             ),
-            SizedBoxWidget(value: 20),
+            const SizedBoxWidget(value: 20),
             //sign in button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -139,7 +137,7 @@ class _BodyState extends State<_Body> {
                 ),
               ),
             ),
-            SizedBoxWidget(value: 25),
+            const SizedBoxWidget(value: 25),
             //not a member? register now
           ],
         ),
@@ -149,7 +147,7 @@ class _BodyState extends State<_Body> {
 }
 
 class SizedBoxWidget extends StatelessWidget {
-  SizedBoxWidget({
+  const SizedBoxWidget({
     super.key,
     required this.value,
   });
