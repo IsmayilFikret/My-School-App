@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('MEKTEBLER'),
       ),
       body: Container(
-        color: Color.fromARGB(255, 218, 213, 213),
+        color: const Color.fromARGB(255, 218, 213, 213),
         child: Column(
           children: [
             Expanded(
