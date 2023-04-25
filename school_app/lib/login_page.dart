@@ -72,6 +72,7 @@ class _BodyState extends State<_Body> {
               height: 15,
             ),
             CustomTextField(
+              obscureText: true,
               icon:
                   obscureText == true ? Icons.visibility_off : Icons.visibility,
               onPress: () {
@@ -89,18 +90,24 @@ class _BodyState extends State<_Body> {
             //sign in button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Container(
-                padding: const EdgeInsets.all(15),
-                decoration: const BoxDecoration(
+              child: InkWell(
+                onTap: () {},
+                child: Container(
+                  padding: const EdgeInsets.all(15),
+                  decoration: const BoxDecoration(
                     color: Colors.deepPurple,
-                    borderRadius: BorderRadius.all(Radius.circular(12))),
-                child: const Center(
-                  child: Text(
-                    'Sign In',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(30),
+                    ),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Sign In',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
@@ -111,15 +118,18 @@ class _BodyState extends State<_Body> {
             //not a member? register now
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Text(
+              children: [
+                const Text(
                   'Not a member ? ',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  '   Register now',
-                  style: TextStyle(
-                      color: Colors.blue, fontWeight: FontWeight.bold),
+                InkWell(
+                  onTap: () {},
+                  child: const Text(
+                    '   Register now',
+                    style: TextStyle(
+                        color: Colors.blue, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
@@ -157,7 +167,7 @@ class CustomTextField extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.grey.shade200,
           border: Border.all(color: Colors.white),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(30),
         ),
         child: Padding(
           padding: const EdgeInsets.only(left: 20),

@@ -35,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: ListView.builder(
               itemCount: mektebler.length,
               itemBuilder: (context, index) => Card(
+                color: Color.fromARGB(255, 200, 190, 186),
                 child: ListTile(
                   onTap: () {},
                   title: Text(
