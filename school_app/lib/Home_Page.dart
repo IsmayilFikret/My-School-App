@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: const Icon(Icons.login),
           ),
         ],
-        title: const Text('MEKTEBLER'),
+        title: const Text(' MEKTEBLER '),
       ),
       body: Container(
         color: const Color.fromARGB(255, 218, 213, 213),
