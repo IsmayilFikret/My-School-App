@@ -27,14 +27,14 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('MEKTEBLER'),
       ),
       body: Container(
-        color: Color.fromARGB(255, 214, 200, 238),
+        color: Color.fromARGB(255, 249, 249, 251),
         child: Column(
           children: [
             Expanded(
               child: ListView.builder(
                 itemCount: mektebler.length,
                 itemBuilder: (context, index) => Card(
-                  color: Color.fromARGB(255, 159, 131, 234),
+                  color: Color.fromARGB(255, 245, 190, 126),
                   child: ListTile(
                     onTap: () {},
                     title: Text(
