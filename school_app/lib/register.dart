@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:school_app/text_field.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -98,7 +97,7 @@ class _BodyState extends State<_Body> {
             const SizedBoxWidget(value: 15),
             //repassword textfield
             CustomTextField(
-              hintText: 'Repeat password',
+              hintText: 'Repassword',
               controller: repasswordController,
               obscureText: true,
               icon:

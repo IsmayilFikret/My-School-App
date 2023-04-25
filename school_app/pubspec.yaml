@@ -38,6 +38,7 @@ dependencies:
   kartal: ^2.8.0
   google_fonts: ^4.0.3
   hidden_drawer_menu: ^3.0.1
+  email_validator: ^2.1.17
 
   
 

@@ -10,8 +10,9 @@ class CustomTextField extends StatelessWidget {
     this.icon,
     this.onPress,
     this.inputype = TextInputType.multiline,
+    this.validator,
   });
-
+  final String? Function(String?)? validator;
   final String hintText;
   final bool? autoFocus;
   final TextEditingController controller;
@@ -31,7 +32,8 @@ class CustomTextField extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.only(left: 20),
-          child: TextField(
+          child: TextFormField(
+            validator: validator,
             keyboardType: inputype,
             obscureText: obscureText,
             autofocus: autoFocus ?? false,
