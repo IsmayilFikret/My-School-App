@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'custom_drawer.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -13,14 +15,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: Scaffold(
-          appBar: AppBar(
-            title: const Text('MEKTEBLER'),
-          ),
-        ),
-      ),
+      drawer: myDrawer(),
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         actions: [
           IconButton(
             onPressed: () {},
@@ -29,23 +26,26 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         title: const Text('MEKTEBLER'),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: mektebler.length,
-              itemBuilder: (context, index) => Card(
-                color: Color.fromARGB(255, 200, 190, 186),
-                child: ListTile(
-                  onTap: () {},
-                  title: Text(
-                    mektebler[index].keys.first.toString(),
+      body: Container(
+        color: Color.fromARGB(255, 214, 200, 238),
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: mektebler.length,
+                itemBuilder: (context, index) => Card(
+                  color: Color.fromARGB(255, 159, 131, 234),
+                  child: ListTile(
+                    onTap: () {},
+                    title: Text(
+                      mektebler[index].keys.first.toString(),
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
