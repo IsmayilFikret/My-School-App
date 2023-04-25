@@ -47,6 +47,7 @@ class _BodyState extends State<_Body> {
             SizedBoxWidget(
               value: 50,
             ),
+
             const Icon(
               Icons.school,
               size: 100,
@@ -64,6 +65,7 @@ class _BodyState extends State<_Body> {
             SizedBoxWidget(value: 50),
             //username textfield
             CustomTextField(
+              autoFocus: true,
               hintText: 'Username',
               controller: usernameController,
             ),

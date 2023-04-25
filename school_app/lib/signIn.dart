@@ -74,7 +74,7 @@ class _BodyState extends State<_Body> {
               inputype: TextInputType.emailAddress,
               controller: emailController,
               hintText: 'Email',
-              autoFocus: false,
+              autoFocus: true,
             ),
             SizedBoxWidget(
               value: 15,
