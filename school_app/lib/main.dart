@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_app/sign_In.dart';
 
 import 'home_page.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: MyHomePage(),
+      home: SignInPage(),
     );
   }
 }
