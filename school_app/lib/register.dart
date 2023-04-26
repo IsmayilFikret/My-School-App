@@ -1,31 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:school_app/text_field.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.deepPurple,
-        title: const Text('MEKTEBLER'),
-      ),
-      backgroundColor: const Color.fromARGB(255, 218, 213, 213),
-      body: const _Body(),
-    );
-  }
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _Body extends StatefulWidget {
-  const _Body();
-
-  @override
-  State<_Body> createState() => _BodyState();
-}
-
-class _BodyState extends State<_Body> {
+class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController repasswordController = TextEditingController();
@@ -35,6 +18,14 @@ class _BodyState extends State<_Body> {
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: _appbar(),
+      backgroundColor: const Color.fromARGB(255, 218, 213, 213),
+      body: _body(),
+    );
+  }
+
+  SingleChildScrollView _body() {
     return SingleChildScrollView(
       child: SafeArea(
         child: Column(
@@ -138,6 +129,14 @@ class _BodyState extends State<_Body> {
           ],
         ),
       ),
+    );
+  }
+
+  AppBar _appbar() {
+    return AppBar(
+      centerTitle: true,
+      backgroundColor: Colors.deepPurple,
+      title: const Text('MEKTEBLER'),
     );
   }
 }

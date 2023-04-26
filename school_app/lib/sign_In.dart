@@ -13,11 +13,8 @@ class SignInPage extends StatefulWidget {
 
 class _SignInPageState extends State<SignInPage> {
   final TextEditingController emailController = TextEditingController();
-
   final TextEditingController passwordController = TextEditingController();
-
   final TextEditingController repasswordController = TextEditingController();
-
   final TextEditingController usernameController = TextEditingController();
 
   bool obscureText = true;
@@ -147,7 +144,7 @@ class _SignInPageState extends State<SignInPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => const RegisterPage(),
+                          builder: (context) => RegisterPage(),
                         ),
                       );
                     },
