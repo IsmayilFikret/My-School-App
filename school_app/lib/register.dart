@@ -27,11 +27,8 @@ class _Body extends StatefulWidget {
 
 class _BodyState extends State<_Body> {
   final TextEditingController emailController = TextEditingController();
-
   final TextEditingController passwordController = TextEditingController();
-
   final TextEditingController repasswordController = TextEditingController();
-
   final TextEditingController usernameController = TextEditingController();
 
   bool obscureText = true;
