@@ -86,7 +86,7 @@ class _BodyState extends State<_Body> {
                 value: 15,
               ),
               CustomTextField(
-                obscureText: true,
+                obscureText: obscureText,
                 icon: obscureText == true
                     ? Icons.visibility_off
                     : Icons.visibility,
