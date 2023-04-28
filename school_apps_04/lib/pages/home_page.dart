@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'sign_in.dart';
+import '../constants/colors.dart';
+import 'sign_in_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -20,9 +21,9 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Container _body() {
+  Widget _body() {
     return Container(
-      color: const Color.fromARGB(255, 218, 213, 213),
+      color: AppColors.backgroundColor,
       child: Column(
         children: [
           Expanded(

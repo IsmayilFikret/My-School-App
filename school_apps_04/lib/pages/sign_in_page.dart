@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
 
+import '../global/custom_button.dart';
 import 'home_page.dart';
-import 'register.dart';
-import 'text_field.dart';
+import 'register_page.dart';
+import '../global/custom_text_field.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -24,50 +26,42 @@ class _SignInPageState extends State<SignInPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appbar(),
-      backgroundColor: const Color.fromARGB(255, 218, 213, 213),
       body: _body(context),
     );
   }
 
   AppBar _appbar() {
     return AppBar(
-      centerTitle: true,
-      backgroundColor: Colors.deepPurple,
       title: const Text('MEKTEBLER'),
     );
   }
 
-  SingleChildScrollView _body(BuildContext context) {
+  Widget _body(BuildContext context) {
     return SingleChildScrollView(
       child: Form(
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBoxWidget(
-                value: 50,
-              ),
+              _sizedBoxH(50),
               const Icon(
                 Icons.school,
                 size: 100,
               ),
-              const SizedBoxWidget(
-                value: 75,
-              ),
+              _sizedBoxH(50),
+
               const Text(
                 'Xoş gəldiniz!',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 36),
               ),
-              const SizedBoxWidget(
-                value: 10,
-              ),
+              _sizedBoxH(10),
+
               const Text(
                 'Zəhmət olmasa giriş edin !',
                 style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
               ),
-              const SizedBoxWidget(
-                value: 50,
-              ),
+              _sizedBoxH(50),
+
               //email textfield
               CustomTextField(
                 onChanged: (value) {
@@ -80,9 +74,8 @@ class _SignInPageState extends State<SignInPage> {
                 hintText: 'Email',
                 autoFocus: true,
               ),
-              const SizedBoxWidget(
-                value: 15,
-              ),
+              _sizedBoxH(15),
+
               CustomTextField(
                 onChanged: (value) {
                   setState(() {
@@ -102,41 +95,21 @@ class _SignInPageState extends State<SignInPage> {
                 controller: passwordController,
                 hintText: 'Password',
               ),
-              const SizedBoxWidget(
-                value: 20,
-              ),
+              _sizedBoxH(20),
+
               //sign in button
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: InkWell(
-                  onTap: username == 'admin' && password == 'admin'
-                      ? () {
-                          Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (context) => const MyHomePage(),
-                          ));
-                        }
-                      : null,
-                  child: Container(
-                    padding: const EdgeInsets.all(15),
-                    decoration: const BoxDecoration(
-                      color: Colors.deepPurple,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(30),
-                      ),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'Sign In',
-                        style: TextStyle(
-                            color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                ),
+              CustomButton(
+                username: username,
+                password: password,
+                buttonTitle: "Sign In",
+                onTap: username == 'admin' && password == 'admin'
+                    ? () {
+                        context.navigateToPage(const MyHomePage());
+                      }
+                    : null,
               ),
-              const SizedBoxWidget(
-                value: 25,
-              ),
+              _sizedBoxH(25),
+
               //not a member? register now
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -147,11 +120,7 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const RegisterPage(),
-                        ),
-                      );
+                      context.navigateToPage(const RegisterPage());
                     },
                     child: const Text(
                       '   Register now',
@@ -164,6 +133,12 @@ class _SignInPageState extends State<SignInPage> {
           ),
         ),
       ),
+    );
+  }
+
+  SizedBox _sizedBoxH(double value) {
+    return SizedBox(
+      height: value,
     );
   }
 }

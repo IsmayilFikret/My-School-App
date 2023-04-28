@@ -11,14 +11,14 @@ class CustomTextField extends StatelessWidget {
     this.onPress,
     this.inputype = TextInputType.multiline,
     this.validator,
-    required this.onChanged,
+    this.onChanged,
   });
   final String? Function(String?)? validator;
   final String hintText;
   final bool? autoFocus;
   final TextEditingController controller;
   final bool obscureText;
-  final Function(String value) onChanged;
+  final Function(String value)? onChanged;
   final IconData? icon;
   final VoidCallback? onPress;
   final TextInputType? inputype;
