@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:school_app/sign_In.dart';
+import 'package:school_app/sign_in.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});

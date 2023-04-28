@@ -114,10 +114,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: const Center(
                     child: Text(
                       'Sign Up',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

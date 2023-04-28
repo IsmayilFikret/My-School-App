@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:school_app/home_page.dart';
 
-import 'package:school_app/register.dart';
-import 'package:school_app/text_field.dart';
+import 'home_page.dart';
+import 'register.dart';
+import 'text_field.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -18,8 +18,8 @@ class _SignInPageState extends State<SignInPage> {
   final TextEditingController usernameController = TextEditingController();
 
   bool obscureText = true;
-  String username = 'admin';
-  String password = 'admin';
+  String? username;
+  String? password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,6 +70,11 @@ class _SignInPageState extends State<SignInPage> {
               ),
               //email textfield
               CustomTextField(
+                onChanged: (value) {
+                  setState(() {
+                    username = value;
+                  });
+                },
                 inputype: TextInputType.emailAddress,
                 controller: emailController,
                 hintText: 'Email',
@@ -79,10 +84,13 @@ class _SignInPageState extends State<SignInPage> {
                 value: 15,
               ),
               CustomTextField(
+                onChanged: (value) {
+                  setState(() {
+                    password = value;
+                  });
+                },
                 obscureText: obscureText,
-                icon: obscureText == true
-                    ? Icons.visibility_off
-                    : Icons.visibility,
+                icon: obscureText == true ? Icons.visibility_off : Icons.visibility,
                 onPress: () {
                   setState(
                     () {
@@ -101,10 +109,9 @@ class _SignInPageState extends State<SignInPage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: InkWell(
-                  onTap: emailController.text == username
+                  onTap: username == 'admin' && password == 'admin'
                       ? () {
-                          Navigator.of(context)
-                              .pushReplacement(MaterialPageRoute(
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(
                             builder: (context) => const MyHomePage(),
                           ));
                         }
@@ -121,9 +128,7 @@ class _SignInPageState extends State<SignInPage> {
                       child: Text(
                         'Sign In',
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
+                            color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -144,14 +149,13 @@ class _SignInPageState extends State<SignInPage> {
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => RegisterPage(),
+                          builder: (context) => const RegisterPage(),
                         ),
                       );
                     },
                     child: const Text(
                       '   Register now',
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
+                      style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
