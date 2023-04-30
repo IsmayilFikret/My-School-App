@@ -22,12 +22,15 @@ class CustomButton extends StatelessWidget {
         onTap: onTap,
         child: Container(
           padding: const EdgeInsets.all(15),
-          decoration: BoxDecoration(color: Colors.deepPurple, borderRadius: 30.borderRadius),
+          decoration: BoxDecoration(
+              color: Colors.deepPurple, borderRadius: 30.borderRadius),
           child: Center(
             child: Text(
               buttonTitle,
-              style:
-                  const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
             ),
           ),
         ),

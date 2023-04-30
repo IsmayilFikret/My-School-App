@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
+import 'mekteb_info_screen.dart';
 import 'sign_in_page.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -32,7 +33,16 @@ class _MyHomePageState extends State<MyHomePage> {
               itemBuilder: (context, index) => Card(
                 color: Colors.white,
                 child: ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MektebInfoScreen(
+                          mekteb: mektebler[index],
+                        ),
+                      ),
+                    );
+                  },
                   title: Text(
                     mektebler[index].keys.first.toString(),
                   ),

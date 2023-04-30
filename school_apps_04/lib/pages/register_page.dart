@@ -47,7 +47,7 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             const SizedBoxWidget(value: 10),
             const Text(
-             RegisterStrings.xanaDoldurma,
+              RegisterStrings.xanaDoldurma,
               style: TextStyle(fontWeight: FontWeight.normal, fontSize: 20),
             ),
             _sizedBoxH(50),
@@ -66,13 +66,13 @@ class _RegisterPageState extends State<RegisterPage> {
               inputype: TextInputType.emailAddress,
               controller: emailController,
               hintText: 'Email',
-              autoFocus: false,
             ),
             _sizedBoxH(20),
 
             CustomTextField(
               obscureText: true,
-              icon: obscureText == true ? Icons.visibility_off : Icons.visibility,
+              icon:
+                  obscureText == true ? Icons.visibility_off : Icons.visibility,
               onPress: () {
                 setState(
                   () {
@@ -91,7 +91,8 @@ class _RegisterPageState extends State<RegisterPage> {
               hintText: 'Repassword',
               controller: repasswordController,
               obscureText: true,
-              icon: obscureText == true ? Icons.visibility_off : Icons.visibility,
+              icon:
+                  obscureText == true ? Icons.visibility_off : Icons.visibility,
               onPress: () {
                 setState(
                   () {

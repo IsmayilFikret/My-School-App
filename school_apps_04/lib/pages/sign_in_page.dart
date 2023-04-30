@@ -72,7 +72,6 @@ class _SignInPageState extends State<SignInPage> {
                 inputype: TextInputType.emailAddress,
                 controller: emailController,
                 hintText: 'Email',
-                autoFocus: true,
               ),
               _sizedBoxH(15),
 
@@ -83,7 +82,9 @@ class _SignInPageState extends State<SignInPage> {
                   });
                 },
                 obscureText: obscureText,
-                icon: obscureText == true ? Icons.visibility_off : Icons.visibility,
+                icon: obscureText == true
+                    ? Icons.visibility_off
+                    : Icons.visibility,
                 onPress: () {
                   setState(
                     () {
@@ -104,7 +105,9 @@ class _SignInPageState extends State<SignInPage> {
                 buttonTitle: "Sign In",
                 onTap: username == 'admin' && password == 'admin'
                     ? () {
-                        context.navigateToPage(const MyHomePage());
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => MyHomePage(),
+                        ));
                       }
                     : null,
               ),
@@ -124,7 +127,8 @@ class _SignInPageState extends State<SignInPage> {
                     },
                     child: const Text(
                       '   Register now',
-                      style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.blue, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],

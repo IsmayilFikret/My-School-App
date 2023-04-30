@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:school_apps_04/pages/home_page.dart';
+import 'package:school_apps_04/pages/register_page.dart';
 
 import 'constants/theme.dart';
 import 'pages/sign_in_page.dart';

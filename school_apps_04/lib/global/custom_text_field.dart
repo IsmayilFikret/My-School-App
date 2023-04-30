@@ -13,6 +13,7 @@ class CustomTextField extends StatelessWidget {
     this.validator,
     this.onChanged,
   });
+
   final String? Function(String?)? validator;
   final String hintText;
   final bool? autoFocus;
