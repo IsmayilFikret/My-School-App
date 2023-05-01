@@ -18,7 +18,9 @@ class MektebInfoScreen extends StatelessWidget {
             child: Center(
               child: Text(
                 'ID : ${mekteb.values.first['id']}',
-                style: const TextStyle(fontSize: 16),
+                style: const TextStyle(
+                  fontSize: 16,
+                ),
               ),
             ),
           )
@@ -29,16 +31,18 @@ class MektebInfoScreen extends StatelessWidget {
         child: SingleChildScrollView(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset(mekteb.values.first['image']),
+            const SizedBoxWidget(value: 24),
             Text(
               'Direktor: ${mekteb.values.first['direktor']}',
-              style: const TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBoxWidget(value: 16),
             Text(
               'Zavxoz: ${mekteb.values.first['zavxoz']}',
-              style: const TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ],
         )),

@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:school_apps_04/pages/home_page.dart';
 
 class DataSearch extends SearchDelegate<String> {
-  List<String> filteredList = [];
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
       IconButton(
-        icon: const Icon(Icons.clear),
+        icon: Icon(Icons.clear),
         onPressed: () {
           query = '';
         },
@@ -18,7 +17,7 @@ class DataSearch extends SearchDelegate<String> {
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
-      icon: const Icon(Icons.arrow_back),
+      icon: Icon(Icons.arrow_back),
       onPressed: () {
         close(context, '');
       },
@@ -28,10 +27,10 @@ class DataSearch extends SearchDelegate<String> {
   @override
   Widget buildResults(BuildContext context) {
     return ListView.builder(
-      itemCount: filteredList.length,
+      itemCount: SchoolInfo.mektebler.length,
       itemBuilder: (context, index) {
         return ListTile(
-          title: Text(filteredList[index]),
+          title: Text(SchoolInfo.mektebler.first[index]),
         );
       },
     );
@@ -39,18 +38,20 @@ class DataSearch extends SearchDelegate<String> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    filteredList = query.isEmpty
+    SchoolInfo.mektebler.first = query.isEmpty
         ? []
-        : SchoolInfo.where((element) =>
-            element.toLowerCase().startsWith(query.toLowerCase())).toList();
+        : SchoolInfo.mektebler.first['']
+            .where((element) =>
+                element.toLowerCase().startsWith(query.toLowerCase()))
+            .toList();
 
     return ListView.builder(
-      itemCount: filteredList.length,
+      itemCount: SchoolInfo.mektebler.length,
       itemBuilder: (context, index) {
         return ListTile(
-          title: Text(filteredList[index]),
+          title: Text(SchoolInfo.mektebler.first[index]),
           onTap: () {
-            query = filteredList[index];
+            query = SchoolInfo.mektebler.first[index];
             showResults(context);
           },
         );
