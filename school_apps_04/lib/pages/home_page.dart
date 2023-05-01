@@ -107,8 +107,8 @@ class SchoolInfo {
     },
     {
       '212 sayli mekteb': {
-        'direktor': 'ismayil',
-        'zavxoz': 'ismayil',
+        'direktor': 'Rehimova Melahet , elaqe : ',
+        'zavxoz': 'Seferov Qambay , elaqe : 050 536 15 45',
         'image': 'assets/images/im_mekteb212.png',
         'id': '12345'
       },
