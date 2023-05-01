@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
+import 'data_search_page.dart';
 import 'mekteb_info_screen.dart';
 import 'sign_in_page.dart';
 
@@ -202,4 +203,6 @@ class SchoolInfo {
       },
     },
   ];
+
+  static where(Function(dynamic element) param0) {}
 }
