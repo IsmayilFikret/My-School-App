@@ -91,8 +91,8 @@ class SchoolInfo {
     },
     {
       '45 sayli mekteb': {
-        'direktor': 'ssass',
-        'zavxoz': 'df',
+        'direktor': 'test , elaqe : ',
+        'zavxoz': 'test , elaqe : ',
         'image': 'assets/images/im_mekteb45.png',
         'id': '12345'
       }
@@ -115,8 +115,8 @@ class SchoolInfo {
     },
     {
       '193 sayli mekteb': {
-        'direktor': 'ismayil',
-        'zavxoz': 'ismayil',
+        'direktor': 'Haciyeva Nihal , elaqe : ',
+        'zavxoz': 'Esgerov Ehliman  , elaqe : 055 890 44 85',
         'image': 'assets/images/im_mekteb193.png',
         'id': '12345'
       },
@@ -139,16 +139,16 @@ class SchoolInfo {
     },
     {
       '36 sayli mekteb': {
-        'direktor': 'ismayil',
-        'zavxoz': 'ismayil',
+        'direktor': 'test , elaqe : ',
+        'zavxoz': 'test , elaqe : ',
         'image': 'assets/images/im_mekteb36.png',
         'id': '12345'
       },
     },
     {
       '47 sayli mekteb': {
-        'direktor': 'ismayil',
-        'zavxoz': 'ismayil',
+        'direktor': 'test , elaqe : ',
+        'zavxoz': 'test , elaqe : ',
         'image': 'assets/images/im_mekteb47.png',
         'id': '12345'
       },
@@ -163,8 +163,8 @@ class SchoolInfo {
     },
     {
       '202 sayli mekteb': {
-        'direktor': 'ismayil',
-        'zavxoz': 'ismayil',
+        'direktor': 'test , elaqe : ',
+        'zavxoz': 'Nurmemmedov Bayram , elaqe : 050 353 35 56',
         'image': 'assets/images/im_mekteb202.png',
         'id': '12345'
       },
@@ -179,24 +179,24 @@ class SchoolInfo {
     },
     {
       '11 sayli mekteb': {
-        'direktor': 'ismayil',
-        'zavxoz': 'ismayil',
+        'direktor': 'test , elaqe : ',
+        'zavxoz': 'test , elaqe : ',
         'image': 'assets/images/im_mekteb11.png',
         'id': '12345'
       },
     },
     {
       '177 sayli mekteb': {
-        'direktor': 'ismayil',
-        'zavxoz': 'ismayil',
+        'direktor': 'Suleymanova Arzu , elaqe : ',
+        'zavxoz': 'Xelilova Xanim , elaqe : ',
         'image': 'assets/images/im_mekteb177.png',
         'id': '12345'
       },
     },
     {
       '291 sayli mekteb': {
-        'direktor': 'ismayil',
-        'zavxoz': 'ismayil',
+        'direktor': 'test , elaqe : ',
+        'zavxoz': 'test , elaqe : ',
         'image': 'assets/images/im_mekteb291.png',
         'id': '12345'
       },
