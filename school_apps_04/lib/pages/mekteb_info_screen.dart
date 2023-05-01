@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:school_apps_04/pages/home_page.dart';
 import 'package:school_apps_04/pages/register_page.dart';
 
 class MektebInfoScreen extends StatelessWidget {
@@ -16,24 +17,27 @@ class MektebInfoScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
+          child: ListView.builder(
+            itemCount: SchoolInfo.mektebler.length,
+            itemBuilder: (context, index) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ImagePathEnum.mekteb45.toImage(),
+                  Image.asset(
+                    SchoolInfo.mektebler[index].keys.last.toString(),
+                  ),
+                  Text(
+                    'Direktor: ${mekteb.values.first['direktor']}',
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                  const SizedBoxWidget(value: 16),
+                  Text(
+                    'Zavxoz: ${mekteb.values.first['zavxoz']}',
+                    style: const TextStyle(fontSize: 20),
+                  ),
                 ],
-              ),
-              Text(
-                'Direktor: ${mekteb.values.first['direktor']}',
-                style: const TextStyle(fontSize: 20),
-              ),
-              const SizedBoxWidget(value: 16),
-              Text(
-                'Zavxoz: ${mekteb.values.first['zavxoz']}',
-                style: const TextStyle(fontSize: 20),
-              ),
-            ],
+              );
+            },
           ),
         ),
       ),
@@ -41,32 +45,32 @@ class MektebInfoScreen extends StatelessWidget {
   }
 }
 
-enum ImagePathEnum {
-  mekteb34,
-  mekteb36,
-  mekteb45,
-  mekteb47,
-  mekteb73,
-  mekteb93,
-  mekteb177,
-  mekteb178,
-  mekteb193,
-  mekteb202,
-  mekteb207,
-  mekteb212,
-  mekteb258,
-  mekteb291,
-}
+// enum ImagePathEnum {
+//   mekteb34,
+//   mekteb36,
+//   mekteb45,
+//   mekteb47,
+//   mekteb73,
+//   mekteb93,
+//   mekteb177,
+//   mekteb178,
+//   mekteb193,
+//   mekteb202,
+//   mekteb207,
+//   mekteb212,
+//   mekteb258,
+//   mekteb291,
+// }
 
-extension ImagePathEnumExtension on ImagePathEnum {
-  String toImagePath() {
-    return 'assets/images/im_$name.png';
-  }
+// extension ImagePathEnumExtension on ImagePathEnum {
+//   String toImagePath() {
+//     return 'assets/images/im_$name.png';
+//   }
 
-  Widget toImage() {
-    return Image.asset(
-      toImagePath(),
-      fit: BoxFit.cover,
-    );
-  }
-}
+//   Widget toImage() {
+//     return Image.asset(
+//       toImagePath(),
+//       fit: BoxFit.cover,
+//     );
+//   }
+// }

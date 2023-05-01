@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       theme: AppTheme.lightTheme,
-      home: const SignInPage(),
+      home: const MyHomePage(),
     );
   }
 }

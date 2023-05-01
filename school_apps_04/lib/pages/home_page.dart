@@ -29,10 +29,11 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: mektebler.length,
+              itemCount: SchoolInfo.mektebler.length,
               itemBuilder: (context, index) => Card(
                 color: Colors.white,
                 child: ListTile(
+                  leading: const Icon(Icons.school),
                   onTap: () {
                     Navigator.push(
                       context,
@@ -84,90 +85,105 @@ class SchoolInfo {
       '34 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb34.png'
       },
     },
     {
       '45 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb45.png',
       }
     },
     {
       '73 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb73.png'
       },
     },
     {
       '212 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb212.png'
       },
     },
     {
       '193 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb193.png'
       },
     },
     {
       '178 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb178.png'
       },
     },
     {
       '93 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb93.png'
       },
     },
     {
       '36 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb36.png'
       },
     },
     {
       '47 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb47.png'
       },
     },
     {
       '258 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb258.png'
       },
     },
     {
       '202 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb202.png'
       },
     },
     {
       '207 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb207.png'
       },
     },
     {
       '11 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb11.png'
       },
     },
     {
       '177 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb177.png'
       },
     },
     {
       '291 sayli mekteb': {
         'direktor': 'ismayil',
         'zavxoz': 'ismayil',
+        'image': 'assets/images/mekteb291.png'
       },
     },
   ];
